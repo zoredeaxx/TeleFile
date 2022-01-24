@@ -1,21 +1,14 @@
 {
-  "name": "TG-FileStreamBot",
-  "description": "A Pyrogram Telegram bot to Stream Telegram files to web.",
+  "name": "TgFs",
+  "description": "Powered by the one and only PYROGRAM.",
   "keywords": [
-      "telegram",
-      "stream",
-      "web",
       "pyrogram",
       "aiohttp",
-      "python",
-      "plugin",
-      "modular",
-      "media"
+      "python"
     ],
-  "repository": "https://github.com/EverythingSuckz/TG-FileStreamBot",
+  "repository": "https://github.com/eyMarv/TG-FileStreamBot",
   "success_url": "/",
-  "logo": "https://telegra.ph/file/9d63060a06c6fc6def1da.png",
-  "website": "stream.wrench.gq",
+  "website": "google.de",
   "env": {
       "ENV": {
           "description": "Set this to True if you don't want to crash the bot",
