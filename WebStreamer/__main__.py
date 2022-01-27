@@ -14,7 +14,7 @@ from pyrogram import idle
 from WebStreamer import bot_info
 from WebStreamer.vars import Var
 from WebStreamer.server import web_server
-from WebStreamer.utils.keepalive import ping_server
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 logging.basicConfig(
@@ -46,9 +46,11 @@ async def start_services():
             sys.modules["WebStreamer.bot.plugins." + plugin_name] = load
             print("Imported => " + plugin_name)
     if Var.ON_HEROKU:
-        print('------------------ Starting Keep Alive Service ------------------')
-        print('\n')
-        await asyncio.create_task(ping_server())
+        print("------------------ Starting Keep Alive Service ------------------")
+        print("\n")
+        scheduler = BackgroundScheduler()
+        scheduler.add_job(ping_server, "interval", seconds=1200)
+        scheduler.start()
     print('-------------------- Initalizing Web Server --------------------')
     app = web.AppRunner(await web_server())
     await app.setup()
