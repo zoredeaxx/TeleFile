@@ -2,7 +2,7 @@
 # Coding : Jyothis Jayanth [@EverythingSuckz]
 
 from pyrogram import filters, emoji
-from WebStreamer.bot import StreamBot
+from bsxcs.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 @StreamBot.on_message(filters.command(['start', 'help']))

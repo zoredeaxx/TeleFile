@@ -4,7 +4,7 @@
 import math
 from typing import Union
 from pyrogram.types import Message
-from WebStreamer.bot import *
+from bsxcs.bot import *
 from pyrogram import Client, utils, raw
 from pyrogram.session import Session, Auth
 from pyrogram.errors import AuthBytesInvalid

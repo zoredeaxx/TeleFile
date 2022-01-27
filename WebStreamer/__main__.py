@@ -11,9 +11,9 @@ from aiohttp import web
 from pathlib import Path
 from pathlib import Path
 from pyrogram import idle
-from WebStreamer import bot_info
-from WebStreamer.vars import Var
-from WebStreamer.server import web_server
+from bsxcs import bot_info
+from bsxcs.vars import Var
+from bsxcs.server import web_server
 from apscheduler.schedulers.background import BackgroundScheduler
 
 
@@ -27,7 +27,7 @@ logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
 loop = asyncio.get_event_loop()
 
-_path = "WebStreamer/bot/plugins/*.py"
+_path = "bsxcs/bot/plugins/*.py"
 files = glob.glob(_path)
 
 async def start_services():
@@ -38,12 +38,12 @@ async def start_services():
         with open(name) as a:
             path_ = Path(a.name)
             plugin_name = path_.stem.replace(".py", "")
-            plugins_dir = Path(f"WebStreamer/bot/plugins/{plugin_name}.py")
+            plugins_dir = Path(f"bsxcs/bot/plugins/{plugin_name}.py")
             import_path = ".plugins.{}".format(plugin_name)
             spec = importlib.util.spec_from_file_location(import_path, plugins_dir)
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
-            sys.modules["WebStreamer.bot.plugins." + plugin_name] = load
+            sys.modules["bsxcs.bot.plugins." + plugin_name] = load
             print("Imported => " + plugin_name)
     if Var.ON_HEROKU:
         print("------------------ Starting Keep Alive Service ------------------")

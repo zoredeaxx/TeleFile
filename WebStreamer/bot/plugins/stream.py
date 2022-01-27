@@ -3,9 +3,9 @@
 
 import logging
 from pyrogram import filters
-from WebStreamer.vars import Var
+from bsxcs.vars import Var
 from urllib.parse import quote_plus
-from WebStreamer.bot import StreamBot
+from bsxcs.bot import StreamBot
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 def detect_type(m: Message):

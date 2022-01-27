@@ -8,11 +8,11 @@ import logging
 import secrets
 import mimetypes
 from aiohttp import web
-from WebStreamer.vars import Var
-from WebStreamer.bot.clients import *
-from WebStreamer import StartTime, __version__, bot_info
-from WebStreamer.utils.time_format import get_readable_time
-from WebStreamer.utils.custom_dl import TGCustomYield, chunk_size, offset_fix
+from bsxcs.vars import Var
+from bsxcs.bot.clients import *
+from bsxcs import StartTime, __version__, bot_info
+from bsxcs.utils.time_format import get_readable_time
+from bsxcs.utils.custom_dl import TGCustomYield, chunk_size, offset_fix
 from asyncio import QueueEmpty
 from random import choice as rchoice
 
