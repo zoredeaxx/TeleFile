@@ -2,6 +2,9 @@
 # Coding : Jyothis Jayanth [@EverythingSuckz]
 
 from os import environ
+from dotenv import load_env
+
+load_env()
 
 class Var(object):
     MULTI_CLIENT = bool(environ.get('MULTI_CLIENT', False))
